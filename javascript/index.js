@@ -43,6 +43,16 @@
 		},
 	});
 
+	// firework explosion blast
+	let blast = new mojs.Shape({
+		radius: { 0 : 'rand(100, 200)' },
+		fill: 'transparent',
+		stroke: colors.contrast,
+		strokeWidth: { 10 : 0 },
+		opacity: { 0.8 : 0 },
+		duration: 700
+	});
+
 	// trajectory of the projectile
 	let path = new mojs.ShapeSwirl({
 		shape: 'circle',
@@ -80,7 +90,12 @@
 			sparks.tune({
 				x: path._props.x,
 				y: path._props.y
-			}).play()
+			}).play();
+
+			blast.tune({
+				x: path._props.x,
+				y: path._props.y
+			}).play();
 		}
 	});
 
