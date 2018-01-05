@@ -40,7 +40,7 @@
 			fill: [ colors.vibrant, colors.contrast, colors.warning ],
 			duration: 'rand(1000, 2000)',
 			radius: { 5 : 0 }
-		},
+		}
 	});
 
 	// firework explosion blast
