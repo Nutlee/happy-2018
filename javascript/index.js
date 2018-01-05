@@ -20,7 +20,6 @@
 		delay: 0
 	});
 
-
 	// projectile particles
 	let particle = mojs.stagger(mojs.Shape);
 	let particles = new particle({
@@ -31,6 +30,18 @@
 		fill: colors.contrast,
 		opacity: 1,
 		duration: 1000
+	});
+
+	// firework explosion particles
+	let fireworks = new mojs.Burst({
+		count: 'rand(20, 50)',
+		radius: { 0 : 'rand(100, 200)' },
+		shape: 'line',
+		children: {
+			fill: [ colors.vibrant, colors.contrast, colors.warning ],
+			duration: 'rand(1000, 2000)',
+			radius: { 5 : 0 }
+		},
 	});
 
 	// trajectory of the projectile
@@ -65,6 +76,12 @@
 				x: 'rand(' + (x - delta / 2) + ', ' + (x + delta / 2) + ')',
 				y: 'rand(' + y + ', ' + (y + delta * 2) + ')'
 			});
+		},
+		onComplete: function() {
+			fireworks.tune({
+				x: path._props.x,
+				y: path._props.y
+			}).play()
 		}
 	});
 
