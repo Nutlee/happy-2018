@@ -4,11 +4,9 @@
 
 	// defines some design constants
 	const colors = {
-		base: '#000',
-		vibrant: '#00ffd3',
-		contrast: '#fff',
-		bright: '#5f5f5f',
-		warning: '#f6cc00'
+		green: '#00ffd3',
+		white: '#fff',
+		yellow: '#f6cc00'
 	};
 
 	// linear easing path (1:1)
@@ -37,7 +35,7 @@
 		count: 'rand(20, 50)',
 		radius: { 0 : 'rand(100, 200)' },
 		children: {
-			fill: [ colors.vibrant, colors.contrast, colors.warning ],
+			fill: [ colors.green, colors.white, colors.yellow ],
 			duration: 'rand(1000, 2000)',
 			radius: { 5 : 0 }
 		}
@@ -47,7 +45,7 @@
 	let blast = new mojs.Shape({
 		radius: { 0 : 'rand(100, 200)' },
 		fill: 'transparent',
-		stroke: colors.contrast,
+		stroke: colors.white,
 		strokeWidth: { 10 : 0 },
 		opacity: { 0.8 : 0 },
 		duration: 700
@@ -59,7 +57,7 @@
 		radius: { 0 : 'rand(150, 250)' },
 		children: {
 			shape: 'line',
-			stroke: [ colors.vibrant, colors.contrast, colors.warning ],
+			stroke: [ colors.green, colors.white, colors.yellow ],
 			strokeWidth: { 3 : 1 },
 			duration: 'rand(1500, 2500)',
 			delay: 100,
@@ -70,7 +68,7 @@
 	// trajectory of the projectile
 	let path = new mojs.ShapeSwirl({
 		shape: 'circle',
-		fill: colors.contrast,
+		fill: colors.white,
 		y: { 200 : 'rand(-100, -300)' },
 		radius: 2,
 		swirlSize: 3,
