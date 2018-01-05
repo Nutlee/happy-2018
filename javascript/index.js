@@ -20,8 +20,26 @@
 		delay: 0
 	});
 
+	// trajectory of the projectile
+	let path = new mojs.ShapeSwirl({
+		shape: 'circle',
+		fill: colors.contrast,
+		y: { 200 : 'rand(-100, -300)' },
+		radius: 2,
+		swirlSize: 3,
+		swirlFrequency: 10,
+		degreeShift: 'rand(-45, 45)',
+		scale: { 1 : 0, curve: linearCurve },
+		duration: 2000,
+		delay: 200,
+		easing: 'quad.out',
+		isForce3d: true
+	});
+
 	// adds shapes to the timeline
-	timeline.add();
+	timeline.add(
+		path
+	);
 
 	// creates the player
 	new MojsPlayer({
