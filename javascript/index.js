@@ -20,6 +20,19 @@
 		delay: 0
 	});
 
+
+	// projectile particles
+	let particle = mojs.stagger(mojs.Shape);
+	let particles = new particle({
+		quantifier: 2,
+		x: 0,
+		y: 0,
+		radius: { 0.5 : 0, curve: linearCurve },
+		fill: colors.contrast,
+		opacity: 1,
+		duration: 1000
+	});
+
 	// trajectory of the projectile
 	let path = new mojs.ShapeSwirl({
 		shape: 'circle',
@@ -31,14 +44,34 @@
 		degreeShift: 'rand(-45, 45)',
 		scale: { 1 : 0, curve: linearCurve },
 		duration: 2000,
-		delay: 200,
 		easing: 'quad.out',
-		isForce3d: true
+		isForce3d: true,
+		onStart: function(isForward, isYoyo) {
+			particles.tune({
+				x: path._props.x,
+				y: path._props.y
+			});
+		},
+		onProgress: function(p, isForward, isYoyo) {
+			let x = parseFloat(path._props.x.replace('px', ''));
+			let y = parseFloat( path._props.y.replace('px', ''));
+			let delta = 10;
+
+			if (x == 0) {
+				return;
+			}
+
+			particles.tune({
+				x: 'rand(' + (x - delta / 2) + ', ' + (x + delta / 2) + ')',
+				y: 'rand(' + y + ', ' + (y + delta * 2) + ')'
+			});
+		}
 	});
 
 	// adds shapes to the timeline
 	timeline.add(
-		path
+		path,
+		particles
 	);
 
 	// creates the player
