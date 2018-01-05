@@ -38,7 +38,8 @@
 			fill: [ colors.green, colors.white, colors.yellow ],
 			duration: 'rand(1000, 2000)',
 			radius: { 5 : 0 }
-		}
+		},
+		isForce3d: true,
 	});
 
 	// firework explosion blast
@@ -48,7 +49,8 @@
 		stroke: colors.white,
 		strokeWidth: { 10 : 0 },
 		opacity: { 0.8 : 0 },
-		duration: 700
+		duration: 700,
+		isForce3d: true,
 	});
 
 	// firework explosion trails
@@ -62,6 +64,9 @@
 			duration: 'rand(1500, 2500)',
 			delay: 100,
 			radius: { 5 : 50 }
+		},
+		isForce3d: true,
+	});
 		}
 	});
 
