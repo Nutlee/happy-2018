@@ -18,18 +18,6 @@
 		delay: 0
 	});
 
-	// projectile particles
-	let particle = mojs.stagger(mojs.Shape);
-	let particles = new particle({
-		quantifier: 2,
-		x: 0,
-		y: 0,
-		radius: { 0.5 : 0, curve: linearCurve },
-		fill: colors.contrast,
-		opacity: 1,
-		duration: 1000
-	});
-
 	// firework explosion sparks
 	let sparks = new mojs.Burst({
 		count: 'rand(20, 50)',
@@ -67,7 +55,20 @@
 		},
 		isForce3d: true,
 	});
-		}
+
+	// firework particles
+	let particle = mojs.stagger(mojs.Burst);
+	let particles = new particle({
+		quantifier: 30, // 10
+		count: 10, // rand(10, 40)
+		children: {
+			fill: colors.white,
+			opacity: { 0.8 : 0, curve: linearCurve },
+			duration: 'rand(1000, 2000)',
+			radius: { 1 : 0 },
+			delay: 'rand(800, 1200)'
+		},
+		isForce3d: true
 	});
 
 	// trajectory of the projectile
@@ -83,29 +84,11 @@
 		duration: 2000,
 		easing: 'quad.out',
 		isForce3d: true,
-		onStart: function(isForward, isYoyo) {
-			particles.tune({
-				x: path._props.x,
-				y: path._props.y
-			});
-		},
-		onProgress: function(p, isForward, isYoyo) {
-			let x = parseFloat(path._props.x.replace('px', ''));
-			let y = parseFloat( path._props.y.replace('px', ''));
-			let delta = 10;
-
-			if (x == 0) {
-				return;
-			}
-
-			particles.tune({
-				x: 'rand(' + (x - delta / 2) + ', ' + (x + delta / 2) + ')',
-				y: 'rand(' + y + ', ' + (y + delta * 2) + ')'
-			});
-		},
 		onComplete: function() {
 			let x = parseInt(path._props.x.replace('px', ''));
 			let y = parseInt(path._props.y.replace('px', ''));
+			let r = trails._props.radius;
+
 			sparks.tune({
 				x: x,
 				y: y
@@ -120,13 +103,19 @@
 				x: x,
 				y: y
 			}).play();
+
+			particles.tune({
+				x: 'rand(' + (x-100) + ', ' + (x+100) + ')',
+				y: 'rand(' + (y-100) + ', ' + (y+100) + ')',
+				//radius: 'stagger(rand(' + r * 0.5 + ', ' + r * 0.9 + '), 1)'
+				radius: 'stagger(1, 2)'
+			}).play();
 		}
 	});
 
 	// adds shapes to the timeline
 	timeline.add(
-		path,
-		particles
+		path
 	);
 
 	// creates the player
