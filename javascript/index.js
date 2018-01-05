@@ -32,11 +32,10 @@
 		duration: 1000
 	});
 
-	// firework explosion particles
-	let fireworks = new mojs.Burst({
+	// firework explosion sparks
+	let sparks = new mojs.Burst({
 		count: 'rand(20, 50)',
 		radius: { 0 : 'rand(100, 200)' },
-		shape: 'line',
 		children: {
 			fill: [ colors.vibrant, colors.contrast, colors.warning ],
 			duration: 'rand(1000, 2000)',
@@ -78,7 +77,7 @@
 			});
 		},
 		onComplete: function() {
-			fireworks.tune({
+			sparks.tune({
 				x: path._props.x,
 				y: path._props.y
 			}).play()
