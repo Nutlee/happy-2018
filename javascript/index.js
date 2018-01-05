@@ -104,19 +104,21 @@
 			});
 		},
 		onComplete: function() {
+			let x = parseInt(path._props.x.replace('px', ''));
+			let y = parseInt(path._props.y.replace('px', ''));
 			sparks.tune({
-				x: path._props.x,
-				y: path._props.y
+				x: x,
+				y: y
 			}).play();
 
 			blast.tune({
-				x: path._props.x,
-				y: path._props.y
+				x: x,
+				y: y
 			}).play();
 
 			trails.tune({
-				x: path._props.x,
-				y: path._props.y
+				x: x,
+				y: y
 			}).play();
 		}
 	});
