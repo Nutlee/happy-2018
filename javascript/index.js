@@ -50,7 +50,7 @@
 			stroke: [ colors.green, colors.white, colors.yellow ],
 			strokeWidth: { 3 : 1 },
 			duration: 'rand(1500, 2500)',
-			radius: { 5 : 50 }
+			radius: { 5 : 'rand(50, 100)' }
 		},
 		isForce3d: true
 	});
