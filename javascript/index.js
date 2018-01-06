@@ -74,6 +74,7 @@
 	let path = new mojs.ShapeSwirl({
 		shape: 'circle',
 		fill: colors.white,
+		x: 'rand(-400, 400)',
 		y: { 200 : 'rand(-100, -300)' },
 		radius: 2,
 		swirlSize: 3,
