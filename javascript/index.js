@@ -58,8 +58,8 @@
 	// firework particles
 	let particle = mojs.stagger(mojs.Burst);
 	let particles = new particle({
-		quantifier: 30, // 10
-		count: 10, // rand(10, 40)
+		quantifier: 20,
+		count: 'rand(5, 10)',
 		children: {
 			fill: colors.white,
 			opacity: { 0.8 : 0, curve: linearCurve },
@@ -79,6 +79,7 @@
 		swirlSize: 3,
 		swirlFrequency: 10,
 		degreeShift: 'rand(-45, 45)',
+		direction: -1,
 		scale: { 1 : 0, curve: linearCurve },
 		duration: 1400,
 		easing: 'quad.out',
@@ -106,8 +107,7 @@
 			particles.tune({
 				x: 'rand(' + (x-100) + ', ' + (x+100) + ')',
 				y: 'rand(' + (y-100) + ', ' + (y+100) + ')',
-				//radius: 'stagger(rand(' + r * 0.5 + ', ' + r * 0.9 + '), 1)'
-				radius: 'stagger(1, 2)'
+				radius: 'stagger(rand(0, ' + r * 0.2 + '), 1)'
 			}).play();
 		}
 	});
