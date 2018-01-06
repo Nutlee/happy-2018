@@ -115,23 +115,27 @@
 			sparks.tune({
 				x: x,
 				y: y
-			}).play();
+			}).generate().replay();
 
 			blast.tune({
 				x: x,
 				y: y
-			}).play();
+			}).generate().replay();
 
 			trails.tune({
 				x: x,
 				y: y
-			}).play();
+			}).generate().replay();
 
 			particles.tune({
 				x: 'rand(' + (x-100) + ', ' + (x+100) + ')',
 				y: 'rand(' + (y-100) + ', ' + (y+100) + ')',
 				radius: 'stagger(rand(0, ' + r * 0.2 + '), 1)'
 			}).play();
+
+			setTimeout(function () {
+				path.generate().play();
+			}, 2500);
 		}
 	});
 
