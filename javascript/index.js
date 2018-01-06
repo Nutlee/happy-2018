@@ -50,7 +50,6 @@
 			stroke: [ colors.green, colors.white, colors.yellow ],
 			strokeWidth: { 3 : 1 },
 			duration: 'rand(1500, 2500)',
-			delay: 100,
 			radius: { 5 : 50 }
 		},
 		isForce3d: true,
@@ -81,7 +80,7 @@
 		swirlFrequency: 10,
 		degreeShift: 'rand(-45, 45)',
 		scale: { 1 : 0, curve: linearCurve },
-		duration: 2000,
+		duration: 1400,
 		easing: 'quad.out',
 		isForce3d: true,
 		onComplete: function() {
