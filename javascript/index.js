@@ -18,6 +18,17 @@
 		delay: 0
 	});
 
+	// firework explosion blast
+	let blast = new mojs.Shape({
+		radius: { 0 : 'rand(100, 200)' },
+		fill: 'transparent',
+		stroke: colors.white,
+		strokeWidth: { 10 : 0 },
+		opacity: { 0.8 : 0 },
+		duration: 700,
+		isForce3d: true
+	});
+
 	// firework explosion sparks
 	let sparks = new mojs.Burst({
 		count: 'rand(20, 50)',
@@ -28,17 +39,6 @@
 			duration: 'rand(1000, 2000)',
 			radius: { 5 : 0 }
 		},
-		isForce3d: true
-	});
-
-	// firework explosion blast
-	let blast = new mojs.Shape({
-		radius: { 0 : 'rand(100, 200)' },
-		fill: 'transparent',
-		stroke: colors.white,
-		strokeWidth: { 10 : 0 },
-		opacity: { 0.8 : 0 },
-		duration: 700,
 		isForce3d: true
 	});
 
