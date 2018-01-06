@@ -22,6 +22,7 @@
 	let sparks = new mojs.Burst({
 		count: 'rand(20, 50)',
 		radius: { 0 : 'rand(100, 200)' },
+		degree: 400,
 		children: {
 			fill: [ colors.green, colors.white, colors.yellow ],
 			duration: 'rand(1000, 2000)',
@@ -45,6 +46,7 @@
 	let trails = new mojs.Burst({
 		count: 'rand(20, 30)',
 		radius: { 0 : 'rand(150, 250)' },
+		degree: 400,
 		children: {
 			shape: 'line',
 			stroke: [ colors.green, colors.white, colors.yellow ],
