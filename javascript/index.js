@@ -95,7 +95,7 @@
 				x: path._props.x,
 				y: path._props.y,
 				fill: colors.yellow,
-				radius: { 2 : 0, curve: linearCurve },
+				radius: { 1 : 0, curve: linearCurve },
 				duration: 500,
 				delay: 'stagger(0, 250)',
 				isForce3d: true,
