@@ -43,7 +43,7 @@
 
 	// firework explosion trails
 	let trails = new mojs.Burst({
-		count: 'rand(10, 20)',
+		count: 'rand(20, 30)',
 		radius: { 0 : 'rand(150, 250)' },
 		children: {
 			shape: 'line',
