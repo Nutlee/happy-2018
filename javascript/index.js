@@ -84,6 +84,26 @@
 		duration: 1400,
 		easing: 'quad.out',
 		isForce3d: true,
+		onProgress: function(p) {
+
+			if (Math.round(p*100) % 2 == 0) {
+				return;
+			}
+
+			// smoke of the projectile
+			new mojs.Shape({
+				x: path._props.x,
+				y: path._props.y,
+				fill: colors.yellow,
+				radius: { 2 : 0, curve: linearCurve },
+				duration: 500,
+				delay: 'stagger(0, 250)',
+				isForce3d: true,
+				onComplete: function() {
+					this.el.parentNode.removeChild(this.el);
+				}
+			}).play();
+		},
 		onComplete: function() {
 			let x = parseInt(path._props.x.replace('px', ''));
 			let y = parseInt(path._props.y.replace('px', ''));
