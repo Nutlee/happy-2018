@@ -86,7 +86,7 @@
 		isForce3d: true,
 		onProgress: function(p) {
 
-			if (Math.round(p*100) % 2 == 0) {
+			if (Math.round(p*100) % 2 == 0 || Math.round(p*100) < 5) {
 				return;
 			}
 
