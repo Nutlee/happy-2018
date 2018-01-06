@@ -98,7 +98,7 @@
 				fill: colors.yellow,
 				radius: { 1 : 0, curve: linearCurve },
 				duration: 500,
-				delay: 'stagger(0, 250)',
+				delay: 'stagger(10, 250)',
 				isForce3d: true,
 				onComplete: function() {
 					this.el.parentNode.removeChild(this.el);
