@@ -193,9 +193,59 @@
 	mojs.addShape('number-0', Number0);
 	mojs.addShape('number-1', Number1);
 	mojs.addShape('number-8', Number8);
+
+	// animates the "2018" word
+	const number_options = {
+		radius: { 0 : 50 },
+		fill: { [colors.green] : colors.white },
+		scaleX: { 10 : 1 },
+		angle: { 'rand(-90, 90)' : 0 },
+		opacity: { 0 : 1 },
+		duration: 'rand(1000, 1400)',
+		easing: mojs.easing.elastic.out,
+		isForce3d: true
+	};
+
+	let number2 = new mojs.Shape(
+		mojs.helpers.extend({
+			x: -200,
+			shape: 'number-2',
+			delay: 50
+		}, number_options)
+	);
+
+	let number0 = new mojs.Shape(
+		mojs.helpers.extend({
+			x: -60,
+			shape: 'number-0',
+			delay: 100
+		}, number_options)
+	);
+
+	let number1 = new mojs.Shape(
+		mojs.helpers.extend({
+			shape: 'number-1',
+			x: 70,
+			fill: { [colors.white] : colors.green },
+			delay: 200
+		}, number_options)
+	);
+
+	let number8 = new mojs.Shape(
+		mojs.helpers.extend({
+			x: 200,
+			fill: { [colors.white] : colors.green },
+			shape: 'number-8',
+			delay: 300
+		}, number_options)
+	);
+
 	// adds shapes to the timeline
 	timeline.add(
-		path
+		number2,
+		number0,
+		number1,
+		number8
 	);
 
 	// creates the player
