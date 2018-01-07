@@ -157,7 +157,7 @@
 				radius: 'stagger(rand(0, ' + r * 0.2 + '), 1)'
 			}).play();
 
-			setTimeout(function () {
+			setTimeout(function() {
 				path.generate().play();
 			}, 2500);
 		}
