@@ -268,5 +268,13 @@
 		}, false);
 
 		music.play();
+
+		document.querySelector('[for="sound"]').addEventListener('click', function() {
+			if (document.querySelector('#sound').checked) {
+				music.pause();
+			} else {
+				music.play();
+			}
+		});
 	});
 })();
