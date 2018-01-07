@@ -278,5 +278,28 @@
 				music.play();
 			}
 		});
+
+		// displays the information box
+		document.querySelector('[for="info"]').addEventListener('click', function() {
+			if (!document.querySelector('#info').checked) {
+				new mojs.Html({
+					el: '.info',
+					scale: { 0.5 : 1 },
+					opacity: { 0 : 1 },
+					duration: 800,
+					easing: mojs.easing.elastic.out,
+					isForce3d: true
+				}).play();
+			} else {
+				new mojs.Html({
+					el: '.info',
+					scale: { 1 : 0.7 },
+					opacity: { 1 : 0 },
+					duration: 500,
+					easing: mojs.easing.expo.out,
+					isForce3d: true
+				}).play();
+			}
+		});
 	});
 })();
