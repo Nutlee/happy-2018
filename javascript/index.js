@@ -261,6 +261,7 @@
 	document.addEventListener('DOMContentLoaded', function() {
 		document.querySelector('body').classList.add('go');
 
+		// plays the background music in loop
 		let music = new Audio('audio/background-music.mp3');
 		music.addEventListener('ended', function() {
 			this.currentTime = 0;
@@ -269,6 +270,7 @@
 
 		music.play();
 
+		// allows the user to switch on/off the background music
 		document.querySelector('[for="sound"]').addEventListener('click', function() {
 			if (document.querySelector('#sound').checked) {
 				music.pause();
