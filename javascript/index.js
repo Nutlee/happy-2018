@@ -258,7 +258,7 @@
 	});
 
 	// binds the DOMContentLoaded event of the document to preload the experiment
-	document.addEventListener('DOMContentLoaded', function(e) {
+	document.addEventListener('DOMContentLoaded', function() {
 		document.querySelector('body').classList.add('go');
 
 		let music = new Audio('audio/background-music.mp3');
