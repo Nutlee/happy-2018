@@ -290,8 +290,7 @@
 					scale: { 0.5 : 1 },
 					opacity: { 0 : 1 },
 					duration: 800,
-					easing: mojs.easing.elastic.out,
-					isForce3d: true
+					easing: mojs.easing.elastic.out
 				}).play();
 			} else {
 				new mojs.Html({
@@ -299,8 +298,7 @@
 					scale: { 1 : 0.7 },
 					opacity: { 1 : 0 },
 					duration: 500,
-					easing: mojs.easing.expo.out,
-					isForce3d: true
+					easing: mojs.easing.expo.out
 				}).play();
 			}
 		});
