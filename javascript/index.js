@@ -243,6 +243,20 @@
 		}, number_options)
 	);
 
+	// information box sparks
+	let boxsparks = new mojs.Burst({
+		parent: '.info',
+		left: '98%',
+		top: '2%',
+		count: 'rand(10, 15)',
+		radius: { 0 : 'rand(70, 100)' },
+		children: {
+			fill: [ colors.green, colors.white, colors.yellow ],
+			duration: 'rand(1000, 1400)',
+			radius: { 7 : 0 }
+		}
+	});
+
 	// adds shapes to the timeline
 	timeline.add(
 		number2,
@@ -292,6 +306,8 @@
 					duration: 800,
 					easing: mojs.easing.elastic.out
 				}).play();
+
+				boxsparks.replay();
 			} else {
 				new mojs.Html({
 					el: '.info',
