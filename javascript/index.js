@@ -256,4 +256,9 @@
 		isRepeat: false,
 		isHidden: false
 	});
+
+	// binds the DOMContentLoaded event of the document to preload the experiment
+	document.addEventListener('DOMContentLoaded', function(e) {
+		document.querySelector('body').classList.add('go');
+	});
 })();
