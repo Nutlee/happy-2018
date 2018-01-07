@@ -1,1 +1,1 @@
-body{background:#000}
+body{overflow:hidden;background:#000 url('../picture/cover.jpg') no-repeat center fixed;background-size:cover}
