@@ -77,6 +77,17 @@ body {
 
 .interface {
 	opacity: 0;
+
+	path {
+		fill: fade(@contrast-color, 20%);
+		transition: fill 500ms ease;
+	}
+
+	&:hover {
+		path {
+			fill: @contrast-color;
+		}
+	}
 }
 
 .commands {
@@ -119,11 +130,6 @@ body {
 	margin-right: 5px;
 	cursor: pointer;
 
-	path {
-		fill: fade(@contrast-color, 20%);
-		transition: fill 500ms ease;
-	}
-
 	span {
 		position: absolute;
 		left: 0;
@@ -131,12 +137,14 @@ body {
 		width: 100%;
 		height: 100%;
 	}
+}
 
-	&:hover {
-		path {
-			fill: @contrast-color;
-		}
-	}
+.logo {
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+	width: 100px;
+	height: 35px;
 }
 
 @keyframes preloading-start {
