@@ -95,7 +95,7 @@
 		direction: -1,
 		scale: { 1 : 0, curve: linearCurve },
 		duration: 1400,
-		easing: 'quad.out',
+		easing: mojs.easing.quad.out,
 		isForce3d: true,
 		onStart: function() {
 			let explosion = trails._props.radius;
