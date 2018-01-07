@@ -54,7 +54,17 @@
 			duration: 'rand(1500, 2500)',
 			radius: { 5 : 'rand(50, 100)' }
 		},
-		isForce3d: true
+		isForce3d: true,
+		onStart: function() {
+			let audio = './audio/explosion-{sound}.mp3';
+
+			let sounds = [
+				'particles-long',
+				'particles-short'
+			];
+
+			new Audio(audio.replace('{sound}', sounds[Math.floor(Math.random() * sounds.length)])).play();
+		}
 	});
 
 	// firework particles
@@ -87,6 +97,20 @@
 		duration: 1400,
 		easing: 'quad.out',
 		isForce3d: true,
+		onStart: function() {
+			let explosion = trails._props.radius;
+			let audio = './audio/rocket-{sound}.mp3';
+
+			if (explosion < 180) {
+				audio = audio.replace('{sound}', 'short');
+			} else if (explosion >= 180 && explosion < 200) {
+				audio = audio.replace('{sound}', 'medium');
+			} else if (explosion >= 200) {
+				audio = audio.replace('{sound}', 'long');
+			}
+
+			new Audio(audio).play();
+		},
 		onProgress: function(p) {
 
 			if (Math.round(p*100) % 2 == 0 || Math.round(p*100) < 5) {
