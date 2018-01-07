@@ -36,6 +36,11 @@ body {
 				animation: preloading-stop 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 			}
 		}
+
+		.interface {
+			opacity: 1;
+			transition: opacity 1s 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+		}
 	}
 }
 
@@ -68,6 +73,10 @@ body {
 		transition: transform 400ms ease;
 		animation: preloading-start 4s 500ms cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 	}
+}
+
+.interface {
+	opacity: 0;
 }
 
 .commands {
