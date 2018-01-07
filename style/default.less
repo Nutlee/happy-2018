@@ -5,6 +5,7 @@
 
 body {
 	background: @base-color;
+	font-family: Roboto, Arial;
 	overflow: hidden;
 
 	&::after {
@@ -67,8 +68,8 @@ body {
 		height: 1px;
 		background: @contrast-color;
 		color: fade(@contrast-color, 5%);
-		font-family: Arial;
 		font-size: 10px;
+		font-weight: bold;
 		line-height: 30px;
 		transition: transform 400ms ease;
 		animation: preloading-start 4s 500ms cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
