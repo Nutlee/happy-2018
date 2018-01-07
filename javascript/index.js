@@ -159,7 +159,7 @@
 
 			setTimeout(function() {
 				path.generate().play();
-			}, 2500);
+			}, Math.floor((Math.random() * 2200) + 1800));
 		}
 	});
 
