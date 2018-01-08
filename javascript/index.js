@@ -305,21 +305,6 @@
 		duration: 700
 	});
 
-	// information box sparks
-	let boxsparks = new mojs.Burst({
-		parent: '.info',
-		left: 'rand(90%, 100%)',
-		top: 'rand(0%, 10%)',
-		count: 'rand(5, 10)',
-		radius: { 0 : 'rand(50, 70)' },
-		children: {
-			fill: [ colors.green, colors.yellow ],
-			duration: 'rand(1000, 1400)',
-			radius: { 7 : 0 },
-			delay: 'rand(0, 100)'
-		}
-	});
-
 	// creates the timeline
 	const timeline = new mojs.Timeline();
 
@@ -461,8 +446,6 @@
 		// displays the information box
 		document.querySelector('[for="info"]').addEventListener('click', function() {
 			if (!document.querySelector('#info').checked) {
-				boxsparks.generate().replay();
-
 				new mojs.Html({
 					el: '.info',
 					scale: { 0.7 : 1 },
