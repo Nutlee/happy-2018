@@ -207,7 +207,7 @@
 		mojs.helpers.extend({
 			x: -200,
 			shape: 'number-2',
-			delay: 50
+			delay: 'rand(100, 200)',
 		}, number_options)
 	);
 
@@ -215,7 +215,7 @@
 		mojs.helpers.extend({
 			x: -60,
 			shape: 'number-0',
-			delay: 100
+			delay: 'rand(200, 300)',
 		}, number_options)
 	);
 
@@ -223,7 +223,7 @@
 		mojs.helpers.extend({
 			shape: 'number-1',
 			x: 70,
-			delay: 200
+			delay: 'rand(300, 400)',
 		}, number_options)
 	).then({
 		fill: colors.green,
@@ -235,7 +235,7 @@
 		mojs.helpers.extend({
 			x: 200,
 			shape: 'number-8',
-			delay: 300
+			delay: 'rand(400, 500)',
 		}, number_options)
 	).then({
 		fill: colors.green,
