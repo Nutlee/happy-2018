@@ -340,7 +340,7 @@
 		music.play();
 
 		// plays the timeline
-		setTimeout(function () {
+		setTimeout(function() {
 			timeline.play();
 		}, 5000);
 
