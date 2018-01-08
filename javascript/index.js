@@ -324,15 +324,6 @@
 		number8
 	);
 
-	// creates the player
-	new MojsPlayer({
-		add: timeline,
-		isSaveState: true,
-		isPlaying: false,
-		isRepeat: false,
-		isHidden: false
-	});
-
 	// binds the DOMContentLoaded event of the document to preload the experiment
 	document.addEventListener('DOMContentLoaded', function() {
 		document.querySelector('body').classList.add('go');
