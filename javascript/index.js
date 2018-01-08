@@ -340,6 +340,42 @@
 			timeline.play();
 		}, 5000);
 
+		// allows the user to entire the fullscreen mode
+		document.querySelector('[for="fullscreen"]').addEventListener('click', function() {
+			if (!document.querySelector('#fullscreen').checked) {
+				const element = document.querySelector('body');
+
+				if (element.requestFullscreen) {
+					element.requestFullscreen();
+				} else if (element.webkitRequestFullscreen) {
+					element.webkitRequestFullscreen();
+				} else if (element.mozRequestFullScreen) {
+					element.mozRequestFullScreen();
+				} else if (element.msRequestFullscreen) {
+					element.msRequestFullscreen();
+				}
+			} else {
+				if (document.exitFullscreen) {
+					document.exitFullscreen();
+				} else if (document.webkitExitFullscreen) {
+					document.webkitExitFullscreen();
+				} else if (document.mozCancelFullScreen) {
+					document.mozCancelFullScreen();
+				} else if (document.msExitFullscreen) {
+					document.msExitFullscreen();
+				}
+			}
+		});
+
+		// binds the fullscreenchange event to refresh the fullscreen command icon
+		['fullscreenchange', 'webkitfullscreenchange', 'mozfullscreenchange', 'MSFullscreenChange'].forEach(function(e) {
+			window.addEventListener(e, function() {
+				if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.mozFullScreenElement && !document.msFullscreenElement) {
+					document.querySelector('#fullscreen').checked = false;
+				}
+			});
+		});
+
 		// allows the user to switch on/off the background music
 		document.querySelector('[for="sound"]').addEventListener('click', function() {
 			if (document.querySelector('#sound').checked) {
