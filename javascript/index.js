@@ -345,6 +345,16 @@
 			timeline.play();
 		}, 5000);
 
+		// creates a color palette
+		let effect = [
+			colors.green,
+			colors.blue,
+			colors.yellow,
+			colors.orange,
+			colors.magenta,
+			colors.red
+		];
+
 		// allows user interaction
 		setTimeout(function() {
 			window.pipe = 0;
@@ -369,15 +379,6 @@
 						this.el.parentNode.removeChild(this.el);
 					}
 				}).play();
-
-				let effect = [
-					colors.green,
-					colors.blue,
-					colors.yellow,
-					colors.orange,
-					colors.magenta,
-					colors.red
-				];
 
 				new mojs.Burst({
 					left: e.clientX,
