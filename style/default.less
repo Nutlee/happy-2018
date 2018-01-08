@@ -70,6 +70,7 @@ body {
 		height: 1px;
 		background: @contrast-color;
 		color: fade(@contrast-color, 5%);
+		font-family: Arial;
 		font-size: 10px;
 		font-weight: bold;
 		line-height: 30px;
@@ -181,10 +182,10 @@ body {
 	0% {width: 0px; color: fade(@contrast-color, 5%);}
 	20% {width: 40px; color: fade(@contrast-color, 20%);}
 	40% {width: 80px; color: fade(@contrast-color, 40%);}
-	100% {width: 120px; color: fade(@contrast-color, 70%);}
+	100% {width: 120px; color: fade(@contrast-color, 60%);}
 };
 
 @keyframes preloading-stop {
-	0% {width: 120px;  color: fade(@contrast-color, 70%);}
-	100% {width: 200px; color: @contrast-color;}
+	0% {width: 120px;  color: fade(@contrast-color, 60%);}
+	100% {width: 200px; color: fade(@contrast-color, 80%);}
 };
