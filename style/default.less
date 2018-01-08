@@ -107,7 +107,7 @@ body {
 	input[type="checkbox"] {
 		display: none;
 
-		& ~ .command {
+		& + .command {
 			.off {
 				display: block;
 			}
@@ -118,7 +118,7 @@ body {
 		}
 
 		&:checked {
-			& ~ .command {
+			& + .command {
 				.on {
 					display: block;
 				}
