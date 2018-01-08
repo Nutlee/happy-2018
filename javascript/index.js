@@ -194,7 +194,7 @@
 	// animates the "2018" word
 	const number_options = {
 		radius: { 0 : 50 },
-		fill: { [colors.green] : colors.white },
+		fill: colors.white,
 		scaleX: { 10 : 1 },
 		angle: { 'rand(-90, 90)' : 0 },
 		opacity: { 0 : 1 },
@@ -223,19 +223,24 @@
 		mojs.helpers.extend({
 			shape: 'number-1',
 			x: 70,
-			fill: { [colors.white] : colors.green },
 			delay: 200
 		}, number_options)
-	);
+	).then({
+		fill: colors.green,
+		delay: 100,
+		duration: 700
+	});
 
 	let number8 = new mojs.Shape(
 		mojs.helpers.extend({
 			x: 200,
-			fill: { [colors.white] : colors.green },
 			shape: 'number-8',
 			delay: 300
 		}, number_options)
-	);
+	).then({
+		fill: colors.green,
+		duration: 700
+	});
 
 	// information box sparks
 	let boxsparks = new mojs.Burst({
