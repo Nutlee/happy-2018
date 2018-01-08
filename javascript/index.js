@@ -203,11 +203,34 @@
 		isForce3d: true
 	};
 
+	// trails for "2018" word
+	const number_trails_options = {
+		count: 'rand(5, 10)',
+		radius: { 50 : 'rand(100, 200)' },
+		children: {
+			shape: 'line',
+			stroke: [ colors.green, colors.white, colors.yellow ],
+			duration: 'rand(1000, 2000)',
+			radius: { 5 : 'rand(50, 100)' }
+		},
+		isForce3d: true,
+		onStart: function() {
+			new Audio('./audio/explosion-short.mp3').play();
+		}
+	};
+
 	let number2 = new mojs.Shape(
 		mojs.helpers.extend({
 			x: -200,
 			shape: 'number-2',
 			delay: 'rand(100, 200)',
+			onStart: function() {
+				new mojs.Burst(
+					mojs.helpers.extend({
+						x: -200
+					}, number_trails_options)
+				).play();
+			}
 		}, number_options)
 	);
 
@@ -216,6 +239,13 @@
 			x: -60,
 			shape: 'number-0',
 			delay: 'rand(200, 300)',
+			onStart: function() {
+				new mojs.Burst(
+					mojs.helpers.extend({
+						x: -60
+					}, number_trails_options)
+				).play();
+			}
 		}, number_options)
 	);
 
@@ -224,6 +254,13 @@
 			shape: 'number-1',
 			x: 70,
 			delay: 'rand(300, 400)',
+			onStart: function() {
+				new mojs.Burst(
+					mojs.helpers.extend({
+						x: 70
+					}, number_trails_options)
+				).play();
+			}
 		}, number_options)
 	).then({
 		fill: colors.green,
@@ -236,6 +273,13 @@
 			x: 200,
 			shape: 'number-8',
 			delay: 'rand(400, 500)',
+			onStart: function() {
+				new mojs.Burst(
+					mojs.helpers.extend({
+						x: 200
+					}, number_trails_options)
+				).play();
+			}
 		}, number_options)
 	).then({
 		fill: colors.green,
