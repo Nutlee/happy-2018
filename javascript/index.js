@@ -154,8 +154,8 @@
 			}).generate().replay();
 
 			particles.tune({
-				x: 'rand(' + (x-100) + ', ' + (x+100) + ')',
-				y: 'rand(' + (y-100) + ', ' + (y+100) + ')',
+				x: 'rand(' + (x - 100) + ', ' + (x + 100) + ')',
+				y: 'rand(' + (y - 100) + ', ' + (y + 100) + ')',
 				radius: 'stagger(rand(0, ' + r * 0.2 + '), 1)'
 			}).play();
 
