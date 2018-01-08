@@ -27,6 +27,7 @@
 		strokeWidth: { 10 : 0 },
 		opacity: { 0.8 : 0 },
 		duration: 700,
+		isShowEnd: false,
 		isForce3d: true
 	});
 
@@ -40,6 +41,7 @@
 			duration: 'rand(1000, 2000)',
 			radius: { 5 : 0 }
 		},
+		isShowEnd: false,
 		isForce3d: true
 	});
 
@@ -55,6 +57,7 @@
 			duration: 'rand(1500, 2500)',
 			radius: { 5 : 'rand(50, 100)' }
 		},
+		isShowEnd: false,
 		isForce3d: true,
 		onStart: function() {
 			let audio = './audio/explosion-{sound}.mp3';
@@ -71,15 +74,16 @@
 	// firework particles
 	let particle = mojs.stagger(mojs.Burst);
 	let particles = new particle({
-		quantifier: 20,
+		quantifier: 12,
 		count: 'rand(5, 10)',
 		children: {
 			fill: colors.white,
-			opacity: { 0.8 : 0, curve: linearCurve },
+			opacity: { 1 : 0, curve: linearCurve },
 			duration: 'rand(1000, 2000)',
 			radius: { 1 : 0 },
 			delay: 'rand(800, 1200)'
 		},
+		isShowEnd: false,
 		isForce3d: true
 	});
 
@@ -97,6 +101,7 @@
 		scale: { 1 : 0, curve: linearCurve },
 		duration: 1400,
 		easing: mojs.easing.quad.out,
+		isShowEnd: false,
 		isForce3d: true,
 		onStart: function() {
 			let explosion = trails._props.radius;
@@ -127,6 +132,7 @@
 				radius: { 1 : 0, curve: linearCurve },
 				duration: 500,
 				delay: 'stagger(10, 250)',
+				isShowEnd: false,
 				isForce3d: true,
 				onComplete: function() {
 					this.el.parentNode.removeChild(this.el);
@@ -367,7 +373,7 @@
 				new mojs.Shape({
 					left: e.clientX,
 					top: e.clientY,
-					radius: { 0 : 'rand(100, 150)' },
+					radius: { 0 : 'rand(50, 100)' },
 					fill: 'transparent',
 					stroke: colors.white,
 					strokeWidth: { 10 : 0 },
