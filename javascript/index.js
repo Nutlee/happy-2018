@@ -114,6 +114,7 @@
 		},
 		onProgress: function(p) {
 
+			// fixes a small bug
 			if (Math.round(p*100) < 5) {
 				return;
 			}
