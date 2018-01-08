@@ -84,7 +84,7 @@
 			fill: colors.white,
 			opacity: { 1 : 0, curve: linearCurve },
 			duration: 'rand(1000, 2000)',
-			radius: { 1 : 0 },
+			radius: { 'rand(1, 2)' : 0 },
 			delay: 'rand(800, 1200)'
 		},
 		isShowEnd: false,
