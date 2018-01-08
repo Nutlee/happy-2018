@@ -15,12 +15,6 @@
 	// linear easing path (1:1)
 	const linearCurve = mojs.easing.path('M0, -100 C0, -100 100, 0 100, 0');
 
-	// creates the timeline
-	const timeline = new mojs.Timeline({
-		speed: 1.0,
-		delay: 0
-	});
-
 	// firework explosion blast
 	let blast = new mojs.Shape({
 		radius: { 0 : 'rand(100, 200)' },
@@ -256,6 +250,12 @@
 			radius: { 7 : 0 },
 			delay: 'rand(0, 100)'
 		}
+	});
+
+	// creates the timeline
+	const timeline = new mojs.Timeline({
+		speed: 1.0,
+		delay: 0
 	});
 
 	// adds shapes to the timeline
