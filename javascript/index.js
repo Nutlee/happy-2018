@@ -289,6 +289,11 @@
 
 		music.play();
 
+		// plays the timeline
+		setTimeout(function () {
+			timeline.play();
+		}, 4000);
+
 		// allows the user to switch on/off the background music
 		document.querySelector('[for="sound"]').addEventListener('click', function() {
 			if (document.querySelector('#sound').checked) {
