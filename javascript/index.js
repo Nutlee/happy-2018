@@ -302,10 +302,7 @@
 	});
 
 	// creates the timeline
-	const timeline = new mojs.Timeline({
-		speed: 1.0,
-		delay: 0
-	});
+	const timeline = new mojs.Timeline();
 
 	// adds shapes to the timeline
 	timeline.add(
