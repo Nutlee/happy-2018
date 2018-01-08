@@ -21,6 +21,7 @@
 
 	// firework explosion blast
 	let blast = new mojs.Shape({
+		parent: '.canvas',
 		radius: { 0 : 'rand(100, 200)' },
 		fill: 'transparent',
 		stroke: colors.white,
@@ -33,6 +34,7 @@
 
 	// firework explosion sparks
 	let sparks = new mojs.Burst({
+		parent: '.canvas',
 		count: 'rand(20, 50)',
 		radius: { 0 : 'rand(100, 200)' },
 		degree: 400,
@@ -47,6 +49,7 @@
 
 	// firework explosion trails
 	let trails = new mojs.Burst({
+		parent: '.canvas',
 		count: 'rand(20, 30)',
 		radius: { 0 : 'rand(150, 250)' },
 		degree: 400,
@@ -74,6 +77,7 @@
 	// firework particles
 	let particle = mojs.stagger(mojs.Burst);
 	let particles = new particle({
+		parent: '.canvas',
 		quantifier: 12,
 		count: 'rand(5, 10)',
 		children: {
@@ -89,6 +93,7 @@
 
 	// trajectory of the projectile
 	let rocket = new mojs.ShapeSwirl({
+		parent: '.canvas',
 		shape: 'circle',
 		fill: colors.white,
 		x: 'rand(-400, 400)',
@@ -126,6 +131,7 @@
 
 			// smoke of the projectile
 			new mojs.Shape({
+				parent: '.canvas',
 				x: rocket._props.x,
 				y: rocket._props.y,
 				fill: colors.yellow,
@@ -204,6 +210,7 @@
 
 	// animates the "2018" word
 	const number_options = {
+		parent: '.canvas',
 		radius: { 0 : 50 },
 		fill: colors.white,
 		scaleX: { 10 : 1 },
@@ -216,6 +223,7 @@
 
 	// trails for "2018" word
 	const number_trails_options = {
+		parent: '.canvas',
 		count: 'rand(5, 10)',
 		radius: { 50 : 'rand(100, 200)' },
 		children: {
@@ -356,12 +364,13 @@
 		setTimeout(function() {
 			window.pipe = 0;
 
-			document.addEventListener('click', function(e) {
+			document.querySelector('.canvas').addEventListener('click', function(e) {
 				if (window.pipe > 4) {
 					return;
 				}
 
 				new mojs.Shape({
+					parent: '.canvas',
 					left: e.clientX,
 					top: e.clientY,
 					radius: { 0 : 'rand(50, 100)' },
@@ -378,6 +387,7 @@
 				}).play();
 
 				new mojs.Burst({
+					parent: '.canvas',
 					left: e.clientX,
 					top: e.clientY,
 					count: 'rand(10, 15)',
