@@ -3,6 +3,7 @@
 @base-color: #000;
 @contrast-color: #fff;
 @vibrant-color: #00ffd3;
+@easing: cubic-bezier(0.075, 0.82, 0.165, 1);
 
 body {
 	background: @base-color;
@@ -33,16 +34,16 @@ body {
 
 		.preload {
 			opacity: 0;
-			transition: opacity 1s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+			transition: opacity 1s 1s @easing;
 
 			&::after {
-				animation: preloading-stop 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+				animation: preloading-stop 1s @easing forwards;
 			}
 		}
 
 		.interface {
 			opacity: 1;
-			transition: opacity 1s 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+			transition: opacity 1s 3s @easing;
 		}
 	}
 }
@@ -75,7 +76,7 @@ body {
 		font-weight: bold;
 		line-height: 30px;
 		transition: transform 400ms ease;
-		animation: preloading-start 4s 500ms cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+		animation: preloading-start 4s 500ms @easing forwards;
 	}
 }
 
