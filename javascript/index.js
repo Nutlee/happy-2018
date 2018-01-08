@@ -344,6 +344,66 @@
 			timeline.play();
 		}, 5000);
 
+		// allows user interaction
+		setTimeout(function() {
+			window.pipe = 0;
+
+			document.addEventListener('click', function(e) {
+				if (window.pipe > 4) {
+					return;
+				}
+
+				new mojs.Shape({
+					left: e.clientX,
+					top: e.clientY,
+					radius: { 0 : 'rand(100, 150)' },
+					fill: 'transparent',
+					stroke: colors.white,
+					strokeWidth: { 10 : 0 },
+					opacity: { 0.8 : 0 },
+					duration: 700,
+					isShowEnd: false,
+					isForce3d: true,
+					onComplete: function() {
+						this.el.parentNode.removeChild(this.el);
+					}
+				}).play();
+
+				let effect = [
+					colors.green,
+					colors.blue,
+					colors.yellow,
+					colors.orange,
+					colors.magenta,
+					colors.red
+				];
+
+				new mojs.Burst({
+					left: e.clientX,
+					top: e.clientY,
+					count: 'rand(10, 15)',
+					radius: { 0 : 'rand(100, 200)' },
+					children: {
+						shape: 'line',
+						stroke: [ effect[Math.floor(Math.random() * effect.length)], colors.white ],
+						duration: 'rand(1000, 1500)',
+						radius: { 5 : 'rand(50, 100)' }
+					},
+					isShowEnd: false,
+					isForce3d: true,
+					onStart: function() {
+						new Audio('./audio/explosion-short.mp3').play();
+					},
+					onComplete: function() {
+						this.el.parentNode.removeChild(this.el);
+						window.pipe--;
+					}
+				}).play();
+
+				window.pipe++;
+			});
+		}, 7000);
+
 		// allows the user to entire the fullscreen mode
 		document.querySelector('[for="fullscreen"]').addEventListener('click', function() {
 			if (!document.querySelector('#fullscreen').checked) {
