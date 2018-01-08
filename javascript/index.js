@@ -458,7 +458,10 @@
 					scale: { 0.7 : 1 },
 					opacity: { 0 : 1 },
 					duration: 800,
-					easing: mojs.easing.elastic.out
+					easing: mojs.easing.elastic.out,
+					onStart: function() {
+						this.el.style.visibility = 'visible';
+					}
 				}).play();
 			} else {
 				new mojs.Html({
@@ -466,7 +469,10 @@
 					scale: { 1 : 0.8 },
 					opacity: { 1 : 0 },
 					duration: 500,
-					easing: mojs.easing.expo.out
+					easing: mojs.easing.expo.out,
+					onComplete: function() {
+						this.el.style.visibility = 'hidden';
+					}
 				}).play();
 			}
 		});
