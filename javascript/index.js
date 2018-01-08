@@ -9,7 +9,11 @@
 	const colors = {
 		green: '#00ffd3',
 		white: '#fff',
-		yellow: '#f6cc00'
+		yellow: '#f6cc00',
+		blue: '#00c3f4',
+		orange: '#ff8b26',
+		magenta: '#ff2de3',
+		red: '#f31250'
 	};
 
 	// linear easing path (1:1)
