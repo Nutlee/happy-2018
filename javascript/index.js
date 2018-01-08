@@ -86,7 +86,7 @@
 	});
 
 	// trajectory of the projectile
-	let path = new mojs.ShapeSwirl({
+	let rocket = new mojs.ShapeSwirl({
 		shape: 'circle',
 		fill: colors.white,
 		x: 'rand(-400, 400)',
@@ -122,8 +122,8 @@
 
 			// smoke of the projectile
 			new mojs.Shape({
-				x: path._props.x,
-				y: path._props.y,
+				x: rocket._props.x,
+				y: rocket._props.y,
 				fill: colors.yellow,
 				radius: { 1 : 0, curve: linearCurve },
 				duration: 500,
@@ -135,8 +135,8 @@
 			}).play();
 		},
 		onComplete: function() {
-			let x = parseInt(path._props.x.replace('px', ''));
-			let y = parseInt(path._props.y.replace('px', ''));
+			let x = parseInt(rocket._props.x.replace('px', ''));
+			let y = parseInt(rocket._props.y.replace('px', ''));
 			let r = trails._props.radius;
 
 			sparks.tune({
@@ -161,7 +161,7 @@
 			}).play();
 
 			setTimeout(function() {
-				path.generate().play();
+				rocket.generate().play();
 			}, Math.floor((Math.random() * 2200) + 1800));
 		}
 	});
@@ -260,6 +260,7 @@
 
 	// adds shapes to the timeline
 	timeline.add(
+		rocket,
 		number2,
 		number0,
 		number1,
