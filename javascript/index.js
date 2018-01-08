@@ -246,14 +246,15 @@
 	// information box sparks
 	let boxsparks = new mojs.Burst({
 		parent: '.info',
-		left: '98%',
-		top: '2%',
-		count: 'rand(10, 15)',
-		radius: { 0 : 'rand(70, 100)' },
+		left: 'rand(90%, 100%)',
+		top: 'rand(0%, 10%)',
+		count: 'rand(5, 10)',
+		radius: { 0 : 'rand(50, 70)' },
 		children: {
-			fill: [ colors.green, colors.white, colors.yellow ],
+			fill: [ colors.green, colors.yellow ],
 			duration: 'rand(1000, 1400)',
-			radius: { 7 : 0 }
+			radius: { 7 : 0 },
+			delay: 'rand(0, 100)'
 		}
 	});
 
@@ -299,19 +300,19 @@
 		// displays the information box
 		document.querySelector('[for="info"]').addEventListener('click', function() {
 			if (!document.querySelector('#info').checked) {
+				boxsparks.generate().replay();
+
 				new mojs.Html({
 					el: '.info',
-					scale: { 0.5 : 1 },
+					scale: { 0.7 : 1 },
 					opacity: { 0 : 1 },
 					duration: 800,
 					easing: mojs.easing.elastic.out
 				}).play();
-
-				boxsparks.replay();
 			} else {
 				new mojs.Html({
 					el: '.info',
-					scale: { 1 : 0.7 },
+					scale: { 1 : 0.8 },
 					opacity: { 1 : 0 },
 					duration: 500,
 					easing: mojs.easing.expo.out
