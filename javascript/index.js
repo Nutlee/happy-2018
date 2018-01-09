@@ -317,8 +317,8 @@
 		number8
 	);
 
-	// binds the DOMContentLoaded event of the document to preload the experiment
-	document.addEventListener('DOMContentLoaded', function() {
+	// binds the load event to completely wait for the experiment to load
+	window.addEventListener('load', function() {
 		document.querySelector('body').classList.add('go');
 
 		// plays the background music in loop
