@@ -319,6 +319,12 @@
 
 	// binds the load event to completely wait for the experiment to load
 	window.addEventListener('load', function() {
+
+		// exits the experiment for small screens
+		if (window.innerWidth < 640) {
+			return;
+		}
+
 		document.querySelector('body').classList.add('go');
 
 		// plays the background music in loop

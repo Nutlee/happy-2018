@@ -251,3 +251,17 @@ body {
 	0% {width: 120px;  color: fade(@contrast-color, 60%);}
 	100% {width: 200px; color: fade(@contrast-color, 80%);}
 });
+
+@media (max-width: 639px) {
+	.preload {
+		.transition(none);
+
+		&::after {
+			content: 'Sorry, this is a desktop experiment.';
+			width: 100%;
+			color: fade(@contrast-color, 80%);
+			.transition(none);
+			.animation(none);
+		}
+	}
+}
