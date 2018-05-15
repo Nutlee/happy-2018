@@ -1,0 +1,3 @@
+# redirects 403 and 404 http requests to the home with a 301 redirect
+ErrorDocument 404 /301.php
+ErrorDocument 403 /301.php
